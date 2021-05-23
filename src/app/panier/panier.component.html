@@ -1,0 +1,18 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Nom</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Quantite</th>
+      <th scope="col">Supprimer</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let prodPanier of tabProduitPanier;">
+    <tr *ngIf="prodPanier.quantite>0">
+        <th scope="row">{{ prodPanier.nom }} </th>
+        <td>{{ prodPanier.prix }}</td>
+        <td>{{ prodPanier.quantite }}</td>
+        <td><button (click)="supprimer(prodPanier)" class="btn btn-danger">Supprimer</button></td>
+      </tr>
+  </tbody>
+</table>
